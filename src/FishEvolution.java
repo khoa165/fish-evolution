@@ -655,6 +655,8 @@ public class FishEvolution extends PApplet {
     this.startNewGameOrContinueCurrentGame();
     // Helper method for button to resume game.
     this.resumeMousePressed();
+    // Helper method for button to logout game.
+    this.logoutMousePressed();
   }
 
   /**
@@ -900,6 +902,20 @@ public class FishEvolution extends PApplet {
         this.displayedButtons = new ArrayList<Button>();
         this.runApplication = true; // Change to true so game can resume.
         this.latestClickedButton = null; // Reset latest clicked button.
+      }
+    }
+  }
+
+  /**
+   * Helper method for button to start playing.
+   */
+  private void logoutMousePressed() {
+    // Check if user clicked new game button.
+    if (this.latestClickedButton != null
+        && this.latestClickedButton.equals(this.pauseGameButton)) {
+      // this.logoutButton.isMouseOver().
+      if (this.displayedButtons.get(2).isMouseOver()) {
+        this.setup();
       }
     }
   }
